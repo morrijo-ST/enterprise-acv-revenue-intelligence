@@ -1,27 +1,33 @@
 # Enterprise ACV & Revenue Intelligence
 
-A Snowflake-backed business intelligence platform for recurring revenue, bookings, expirations, contract exposure, geography, forecasting, and executive finance analysis.
+A Snowflake-backed business intelligence reference for recurring revenue, bookings, expirations, contract exposure, geography, and executive finance analysis.
 
-> **Portfolio note:** This repository is a sanitized public reference derived from enterprise BI patterns. All data, names, identifiers, and examples used publicly are synthetic or generalized.
+> **Working public demo:** The repo includes a deterministic synthetic customer/contract portfolio, executable ACV logic, an interactive Streamlit app, tests, and reproducible run instructions. See [`DEMO.md`](DEMO.md).
+
+> **Portfolio note:** All public data, names, identifiers, and examples are synthetic or generalized. No employer datasets or proprietary implementation details are included.
+
+## Try It
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run app.py
+```
 
 ## Business Problem
 
-Recurring-revenue businesses need a consistent way to understand current ACV, bookings, renewals, expirations, contract mix, geography, and forward exposure. Those metrics often live across CRM, contract, finance, spreadsheet, and data-warehouse sources.
+Recurring-revenue businesses need a consistent way to understand current ACV, bookings, renewals, expirations, contract mix, geography, and forward exposure. This demo shows how those concepts can be normalized into a governed analytical model for FP&A and management reporting.
 
-This project demonstrates how to design an enterprise semantic model that turns those sources into a governed analytical platform for FP&A and management reporting.
+## Demo Capabilities
 
-## Core Capabilities
-
-- ACV / recurring revenue balances
-- GACV growth analysis
-- bookings and expirations
-- contract-term analytics
-- geographic and country views
-- forecasting-region logic
-- customer and product hierarchies
-- weighted contract metrics
-- FX-aware analysis
-- executive Power BI reporting
+- starting and ending ACV
+- net ACV movement and growth
+- expiring ACV exposure
+- bookings
+- renewal / expansion / contraction / churn movement classes
+- regional and product filtering
+- customer-level drilldown
 
 ## Reference Architecture
 
@@ -42,13 +48,17 @@ CRM / Contracts / Finance / Reference Data
 
 ## Technology
 
-`Snowflake` `Power BI` `DAX` `SQL` `Excel` `SharePoint` `Data Modeling` `FP&A`
+`Snowflake` `Power BI` `DAX` `SQL` `Python` `Streamlit` `Pandas` `Plotly` `Data Modeling` `FP&A`
 
 ## Repository Structure
 
 ```text
 .
-├── README.md
+├── app.py
+├── core.py
+├── synthetic.py
+├── requirements.txt
+├── DEMO.md
 ├── docs/
 │   ├── case-study.md
 │   ├── architecture.md
@@ -57,24 +67,22 @@ CRM / Contracts / Finance / Reference Data
 │   ├── data-dictionary.md
 │   ├── security.md
 │   └── runbook.md
-├── sample-data/
-├── sql/
-├── dax/
-├── diagrams/
-├── screenshots/
 └── tests/
+    └── test_core.py
 ```
 
-## Portfolio Roadmap
+## Demo Status
 
 - [x] Public-safe project definition
-- [ ] Synthetic customer / contract / ACV dataset
-- [ ] Simplified star-schema reference model
-- [ ] DAX metric library
-- [ ] Architecture diagram
-- [ ] Sanitized dashboard screenshots
-- [ ] Demo walkthrough
+- [x] Synthetic customer / ACV portfolio
+- [x] Executable ACV analytics
+- [x] Interactive dashboard demo
+- [x] Automated tests
+- [x] Documentation / controls
+- [ ] Hosted live-demo URL
+- [ ] Sanitized Power BI screenshot gallery
+- [ ] Recorded walkthrough
 
 ## Architectural Focus
 
-The public reference version will emphasize a clean star schema, one governed date dimension, reusable measures, warehouse-side transformations where appropriate, and transparent finance definitions.
+The public reference version emphasizes transparent finance definitions, deterministic data generation, reusable metrics, clean filtering, and separation between business logic and presentation.
