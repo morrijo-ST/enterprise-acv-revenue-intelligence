@@ -2,11 +2,15 @@
 
 A Snowflake-backed business intelligence reference for recurring revenue, bookings, expirations, contract exposure, geography, and executive finance analysis.
 
+> **Live demo:** https://enterprise-acv-revenue-intelligence.onrender.com
+
 > **Working public demo:** The repo includes a deterministic synthetic customer/contract portfolio, executable ACV logic, an interactive Streamlit app, tests, and reproducible run instructions. See [`DEMO.md`](DEMO.md).
 
 > **Portfolio note:** All public data, names, identifiers, and examples are synthetic or generalized. No employer datasets or proprietary implementation details are included.
 
 ## Try It
+
+**Hosted:** https://enterprise-acv-revenue-intelligence.onrender.com
 
 ```bash
 python -m venv .venv
@@ -50,27 +54,6 @@ CRM / Contracts / Finance / Reference Data
 
 `Snowflake` `Power BI` `DAX` `SQL` `Python` `Streamlit` `Pandas` `Plotly` `Data Modeling` `FP&A`
 
-## Repository Structure
-
-```text
-.
-├── app.py
-├── core.py
-├── synthetic.py
-├── requirements.txt
-├── DEMO.md
-├── docs/
-│   ├── case-study.md
-│   ├── architecture.md
-│   ├── metric-definitions.md
-│   ├── business-rules.md
-│   ├── data-dictionary.md
-│   ├── security.md
-│   └── runbook.md
-└── tests/
-    └── test_core.py
-```
-
 ## Demo Status
 
 - [x] Public-safe project definition
@@ -79,10 +62,6 @@ CRM / Contracts / Finance / Reference Data
 - [x] Interactive dashboard demo
 - [x] Automated tests
 - [x] Documentation / controls
-- [ ] Hosted live-demo URL
+- [x] Hosted live-demo URL
 - [ ] Sanitized Power BI screenshot gallery
 - [ ] Recorded walkthrough
-
-## Architectural Focus
-
-The public reference version emphasizes transparent finance definitions, deterministic data generation, reusable metrics, clean filtering, and separation between business logic and presentation.
